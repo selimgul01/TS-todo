@@ -1,6 +1,6 @@
 
 import Todo from './Todo'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 import { TodoType } from '../types/Types'
 
