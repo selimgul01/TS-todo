@@ -19,9 +19,14 @@ export const todoSlice = createSlice({
     },
     todoUpdate: (state:TodoInitialState,action:PayloadAction<TodoType>)=>{
       const findTodo = state.todos.find((item:TodoType) => item.id === action.payload.id)
-      if (findTodo) {
+       if (findTodo) {
           const tempTodos = [...state.todos.map((item)=> {
-            return { ...item , content: action.payload.content}
+            if (item.id === action.payload.id) {
+              
+              return { ...item , content: action.payload.content}
+            }else{
+              return item
+            }
         })]
         state.todos = tempTodos
       }
